@@ -1,6 +1,5 @@
 <img align="right" src="https://github.com/gaspan/gaspan/blob/master/Me_illustration.png" alt="Illustration of Gaspan" 
-/>
-<!-- width=350px height=430px/> -->
+width=350px height=430px/>
 
 ### Hi, I'm Gentur 👋
 
