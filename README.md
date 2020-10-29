@@ -6,7 +6,7 @@ width=350px height=430px/>
 I’m a Web developer, technology enthusiast. I'm a NodeJS Developer, my expertise as Backend use express Js and Frontend use Vue Js, and also as fullstack engineer use PHP (Laravel) and Jquery. I currently work as a Software Engineer at Eannovate. 
 
 - 📱  I’m currently working on Eannovate.
-- 🤓 I’m currently learning Golang.
+- 🤓 I’m currently learning Flutter.
 - 💬  Ask me about Web development.
 - 📫  How to reach me: gentur.ariya@gmail.com or linkedin [@gentur-ariyadi](https://www.linkedin.com/in/gentur-ariyadi-47851b106/)
 - 😄  Pronouns: he/his
