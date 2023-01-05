@@ -3,9 +3,9 @@ width=350px height=430px/>
 
 ### Hi, I'm Gentur 👋
 
-I’m a Web developer, technology enthusiast. I'm a NodeJS Developer, my expertise as Backend use express Js and Frontend use Vue Js, and also as fullstack engineer use PHP (Laravel) and Jquery. I currently work as a Software Engineer at Eannovate. 
+I’m a Web developer, technology enthusiast. I'm a NodeJS and Golang Developer, my expertise as Backend use express Js, Gin Gonic and Frontend use Vue Js, and also as fullstack engineer use PHP (Laravel) and Jquery. I currently work as a Software Engineer at Lintas Media Danawa. 
 
-- 📱  I’m currently working on Dans Multipro.
+- 📱  I’m currently working on Lintas Media Danawa.
 - 🤓 I’m currently learning Flutter.
 - 💬  Ask me about Web development.
 - 📫  How to reach me: gentur.ariya@gmail.com or linkedin [@gentur-ariyadi](https://www.linkedin.com/in/gentur-ariyadi-47851b106/)
