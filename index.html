@@ -280,7 +280,8 @@
             </div>
 
             <div class="col-lg-6">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
+              <form method="post" role="form" class="php-email-form" id="javascript_form">
                 <div class="row gy-3">
 
                   <div class="col-lg-6">
@@ -303,18 +304,19 @@
 
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <textarea class="form-control" name="message" placeholder="Message" required></textarea>
+                      <textarea class="form-control" name="text" placeholder="Message" required></textarea>
                     </div>
                   </div>
+                  <input type="hidden" name="access_token" value="vn4bpnliwg2dx5u3qgavp9u4" />                 
 
                   <div class="col-lg-12">
                     <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <div id="err-mail" class="error-message"></div>
+                    <div id="success-mail" class="sent-message">Your message has been sent. Thank you!</div>
                   </div>
 
                   <div class="mt-0">
-                    <input type="submit" class="btn btn-defeault btn-send" value="Send message">
+                    <input type="submit" id="js_send" class="btn btn-defeault btn-send" value="Send message">
                   </div>
 
                 </div>
@@ -366,6 +368,71 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+
+    //update this with your js_form selector
+    var form_id_js = "javascript_form";
+
+    var data_js = {
+        "access_token": "vn4bpnliwg2dx5u3qgavp9u4"
+    };
+
+    function js_onSuccess() {
+      document.getElementById("success-mail").style.display = "block";
+    }
+
+    function js_onError(error) {
+      var errMail = document.getElementById("err-mail")
+      errMail.value = error
+      errMail.style.display = "block";
+    }
+
+    var sendButton = document.getElementById("js_send");
+
+    function js_send() {
+        sendButton.value='Sending…';
+        sendButton.disabled=true;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == 200) {
+                js_onSuccess();
+            } else
+            if(request.readyState == 4) {
+                js_onError(request.response);
+            }
+        };
+
+        var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+        var message = document.querySelector("#" + form_id_js + " [name='text']").value + ', dari email ' + document.querySelector("#" + form_id_js + " [name='email']").value + ', dengan nama ' + document.querySelector("#" + form_id_js + " [name='name']").value;
+        data_js['subject'] = subject;
+        data_js['text'] = message;
+        var params = toParams(data_js);
+
+        request.open("POST", "https://postmail.invotes.com/send", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        request.send(params);
+
+        return false;
+    }
+
+    sendButton.onclick = js_send;
+
+    function toParams(data_js) {
+        var form_data = [];
+        for ( var key in data_js ) {
+            form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+        }
+
+        return form_data.join("&");
+    }
+
+    var js_form = document.getElementById(form_id_js);
+    js_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    });
+  </script>
 
 </body>
 
